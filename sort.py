@@ -143,7 +143,8 @@ if __name__=="__main__":
 	if len(argumentList)<2:
 		print("Please Enter the Youtube Playlist url")
 		url=input() #"https://www.youtube.com/playlist?list=PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN"
-
+	else:
+		url=argumentList[1]
 	print("\n\nDo you want to Enforce file naming i.e All the files will be auto renamed to highest possible match\ny or Y to autorename else any key to manualy rename")
 	ch= input()
 	if ch.lower()=="y":
