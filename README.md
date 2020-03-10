@@ -3,23 +3,28 @@ Sort the youtube dl playlist on local downloaded directory..
 
 # Usage:
 ## sort.py
-**1. copy the sort.py and recovery.py to your Playlist Directory**
+### **1. copy the youtubeSorter.py and youtubeSorter_Recovery.py to your /usr/local/bin Directory**
+ **make it Executable**
  
- 2. open a **Terminal** and navigate to Playlist Directory(i.e Your current path is playlist directory)
+ >sudo chmod +x youtubeSorter.py youtubeSorter_Recovery.py
+ 
+ 
+### 2. open a **Terminal** and navigate to Playlist Directory(i.e Your current path is playlist directory)
 
-3. run the sort.py 
+### 3. run the youtubeSorter.py 
   
   ``` python sort.py <url_of_playlist>```
     or 
   > ./sort.py
   
  
-4. Sort.py will ask two things depending(1 if url is passed via argument)
+### 4. YoutubeSorter.py
+  will ask two things ```url``` and ```shouldEnforceRename``` (1 if url is passed via argument).
   whether it should auto rename all the file when the file  is not found and it suggest a best possible match
   
   >Enter y or  Y to Accept this else any key will make you manually decide what to do
  
- ## Recovery.py
+ ## youtubeSorter_Recovery.py
   
   this file should be run to recover any changes made by sort.py
   i.e it undo the renaming of file to Original State.
