@@ -112,7 +112,9 @@ def main(youtube_file_list,original_file_list,shouldEnforceRename):
 		os.remove(backup_file.name)
 	# print(RATIO_LIST)
 	# print("minimum highest ratio==",min(RATIO_LIST))
-	time.sleep(5)
+	for i in range(5):
+		print(f"Exiting in {5-i} seconds",end="\r")
+		time.sleep(1)
 
 def getbackupfile():
 	if not os.path.isdir("./"+RECOVERY_DIRECTORY):
