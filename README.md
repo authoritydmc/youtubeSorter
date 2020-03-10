@@ -20,7 +20,7 @@ Sort the youtube dl playlist on local downloaded directory..
     or 
   > python youtubeSorter.py
   
-  **note you can pip to tee to have a log as well as output on Screen**
+  **note you can pipe it to tee to have a log as well as output on Screen**
   ex : ```youtubeSorter.py | tee log.log```
   
  
