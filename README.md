@@ -4,7 +4,9 @@ Sort the youtube dl playlist on local downloaded directory..
 # Usuage:
 ## sort.py
 **1. copy the sort.py and recovery.py to your Playlist Directory**
-2. open a **Terminal** and navigate to Playlist Directory(i.e Your current path is playlist directory)
+ 
+ 2. open a **Terminal** and navigate to Playlist Directory(i.e Your current path is playlist directory)
+
 3. run the sort.py 
   
   ``` python sort.py <url_of_playlist>```
