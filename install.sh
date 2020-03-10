@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "installing ..."
 sudo chmod 755 youtubeSorter*
+sudo rm /usr/local/bin/youtubeSorter*
 sudo cp youtubeSorter* /usr/local/bin
 echo "installation Done"
 

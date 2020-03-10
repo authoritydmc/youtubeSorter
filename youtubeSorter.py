@@ -146,7 +146,7 @@ if __name__=="__main__":
 	url=""
 	shouldEnforceRename=False
 	argumentList=sys.argv
-	print("YoutubeSorter V1.0 by authoritydmc")
+	print("YoutubeSorter V1.01 by authoritydmc")
 	print("Current Director:",os.getcwd())
 	if not Path(".youtube_playlist").is_file():
 		if len(argumentList)<2:
