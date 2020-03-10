@@ -20,13 +20,20 @@ Sort the youtube dl playlist on local downloaded directory..
     or 
   > python youtubeSorter.py
   
+  **note you can pip to tee to have a log as well as output on Screen**
+  ex : ```youtubeSorter.py | tee log.log```
+  
  
 ### 4. YoutubeSorter.py
   will ask two things ```url``` and ```shouldEnforceRename``` (1 if url is passed via argument).
   whether it should auto rename all the file when the file  is not found and it suggest a best possible match
   
   >Enter y or  Y to Accept this else any key will make you manually decide what to do
- 
+  
+  **for the first time it will need Internet Connectivity to fetch filelist Name**
+  
+  
+  
  ## youtubeSorter_Recovery.py
   
   this file should be run to recover any changes made by sort.py
