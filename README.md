@@ -1,7 +1,7 @@
 # youtube_dl_fileSorter v 1.0
 Sort the youtube dl playlist on local downloaded directory..
 # how to Install
-1. Clone this Repo
+1. **Clone this Repo**
 > git clone https://github.com/authoritydmc/youtube_dl_fileSorter.git
 2. goto cloned Directory and run install.sh (make sure it is executable) using sudo
 >sudo install.sh
@@ -10,9 +10,9 @@ Sort the youtube dl playlist on local downloaded directory..
 ## youtubeSorter.py
  
  
-### 2. open a **Terminal** and navigate to Playlist Directory(i.e Your current path is playlist directory)
+### 1. open a **Terminal** and navigate to Playlist Directory(i.e Your current path is playlist directory)
 
-### 3. run the youtubeSorter.py 
+### 2. run the youtubeSorter.py 
   
   ``` youtubeSorter.py <url of playlist> ```
     or 
@@ -22,13 +22,13 @@ Sort the youtube dl playlist on local downloaded directory..
   ex : ```youtubeSorter.py | tee log.log```
   
  
-### 4. YoutubeSorter.py
-  will ask two things ```url``` and ```shouldEnforceRename``` (1 if url is passed via argument).
-  whether it should auto rename all the file when the file  is not found and it suggest a best possible match
-  
-  >Enter y or  Y to Accept this else any key will make you manually decide what to do
-  
-  **for the first time it will need Internet Connectivity to fetch filelist Name**
+  **3. YoutubeSorter.py**
+    will ask two things ```url``` and ```shouldEnforceRename``` (1 if url is passed via argument).
+    whether it should auto rename all the file when the file  is not found and it suggest a best possible match
+    
+    >Enter y or  Y to Accept this else any key will make you manually decide what to do
+    
+    **for the first time it will need Internet Connectivity to fetch filelist Name**
   
   
   
