@@ -1,4 +1,4 @@
-# youtube_dl_fileSorter
+# youtube_dl_fileSorter v 1.0
 Sort the youtube dl playlist on local downloaded directory..
 
 # Usage:
