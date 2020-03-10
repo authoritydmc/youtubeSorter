@@ -144,7 +144,7 @@ if __name__=="__main__":
 	url=""
 	shouldEnforceRename=False
 	argumentList=sys.argv
-	print("YoutubeSorter V1.01 by authoritydmc")
+	print("YoutubeSorter V1.02 by authoritydmc")
 	print("Current Director:",os.getcwd())
 	if not Path(".youtube_playlist").is_file():
 		if len(argumentList)<2:
@@ -178,5 +178,6 @@ if __name__=="__main__":
 	# print(current_file_list)
 	main(file_list_from_youtube,current_file_list,shouldEnforceRename)
 	for i in range(5):
-		print(f"\n\nExiting in {5-i} seconds",end="\r")
+		print(f"Exiting in {5-i} seconds",end="\r")
 		time.sleep(1)
+		
