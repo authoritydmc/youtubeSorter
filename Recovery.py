@@ -1,12 +1,11 @@
 #!/usr/bin/env python
 import os
 from pathlib import Path
-# from difflib import SequenceMatcher  
+
+ 
 RECOVERY_DIRECTORY=".recovery"
 
 def recovery():
-    # else:
-    #     print("Recovery Started")
     ISRECOVERY_DONE=False
     ISVALID_FILE=False
     if not os.path.isdir("./"+RECOVERY_DIRECTORY):
