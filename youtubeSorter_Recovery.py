@@ -47,4 +47,5 @@ def recovery():
         print("Failed To do Recovery")
 
 if __name__=="__main__":
+    print("YoutubeSorter_Recovery v1.0 by authoritydmc")
     recovery()
