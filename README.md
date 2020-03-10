@@ -1,15 +1,13 @@
 # youtube_dl_fileSorter v 1.0
 Sort the youtube dl playlist on local downloaded directory..
+# how to Install
+1. Clone this Repo
+> git clone https://github.com/authoritydmc/youtube_dl_fileSorter.git
+2. goto cloned Directory and run install.sh (make sure it is executable) using sudo
+>sudo install.sh
 
 # Usage:
-## sort.py
-### **1. copy the youtubeSorter.py and youtubeSorter_Recovery.py to your /usr/local/bin Directory**
- **make it Executable**
- 
- >sudo chmod +x youtubeSorter.py youtubeSorter_Recovery.py
- own the file ..
- >sudo chown <username>  youtubeSorter.py
- >sudo chown <username> youtubeSorter_Recovery.py
+## youtubeSorter.py
  
  
 ### 2. open a **Terminal** and navigate to Playlist Directory(i.e Your current path is playlist directory)
