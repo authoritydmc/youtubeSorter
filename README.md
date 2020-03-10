@@ -7,15 +7,18 @@ Sort the youtube dl playlist on local downloaded directory..
  **make it Executable**
  
  >sudo chmod +x youtubeSorter.py youtubeSorter_Recovery.py
+ own the file ..
+ >sudo chown <username>  youtubeSorter.py
+ >sudo chown <username> youtubeSorter_Recovery.py
  
  
 ### 2. open a **Terminal** and navigate to Playlist Directory(i.e Your current path is playlist directory)
 
 ### 3. run the youtubeSorter.py 
   
-  ``` python sort.py <url_of_playlist>```
+  ``` youtubeSorter.py <url of playlist> ```
     or 
-  > ./sort.py
+  > python youtubeSorter.py
   
  
 ### 4. YoutubeSorter.py
@@ -31,4 +34,6 @@ Sort the youtube dl playlist on local downloaded directory..
   
   Please note you can run this multiple times untill you get back to the original fileNames.
   
+##### note
 
+Run using python3
