@@ -6,13 +6,14 @@ import datetime
 import argparse
 import sys
 import time
+import youtube_dl
 # how to get the playlist
 # youtube-dl -e --skip-download --flat-playlist  https://www.youtube.com/playlist?list=PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN>list.txt
 # some replacement youtube_dl does
 # :" -> " -"
 # "/"-> "_"
 # "?"->""
-# 
+#BETA VERSION
 # INITIALISATION
 RECOVERY_DIRECTORY=".recovery"
 
@@ -25,7 +26,7 @@ def main(youtube_file_list,original_file_list,shouldEnforceRename):
 	ISLOG_SUCCESSFUL=False
 	sizeFormatter=str(len(str(len(youtube_file_list))))
 	print(f"Size formatter ->{sizeFormatter}")
-	print("RECOVERY MADE AT  "+datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")+ "IST (+5:30)")
+	print("RECOVERY MADE AT  "+datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")+" @authoritydmc")
 	backup_file.write("RECOVERY MADE AT  "+datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")+ "IST (+5:30)\n\n")
 	print("Should EnforceRename-> ","True" if shouldEnforceRename else "False")
 	print("Renaming ....")
@@ -80,7 +81,7 @@ def main(youtube_file_list,original_file_list,shouldEnforceRename):
 			print("\nCouldn't find a exact match ")
 			ext=original_fileName.split(".")[-1]
 			suggestName=f"%0{sizeFormatter}d "%(_file_count)+fileName+"."+ext
-			print(f"\n\nSuggested Filename:\t\n\t{suggestName} \nFOR (original file)__: \n\t {high_ratio_fileName}")
+			print(f"\n\nSuggested Filename:\t\n\t{suggestName} \nFOR (original file): \n\t {high_ratio_fileName}")
 			#only if the maximum suggested filename ratio is greater than Threshold than only replace
 			if high_ratio>=RATIO_THREASHOLD:
 				if not shouldEnforceRename:
@@ -100,7 +101,7 @@ def main(youtube_file_list,original_file_list,shouldEnforceRename):
 			print("-"*50)
 		RATIO_LIST.append(high_ratio)
 
-		print("="*100)
+		print("="*80)
 
 				
 
@@ -145,8 +146,11 @@ if __name__=="__main__":
 	url=""
 	shouldEnforceRename=False
 	argumentList=sys.argv
-	print("YoutubeSorter V1.02 by authoritydmc")
-	print("Current Director:",os.getcwd())
+	print("-"*80)
+	print("\t\tyoutubeSorter v2.0 by authoritydmc")
+	print("-"*80)
+	print("\n\n\nCurrent Director:",os.getcwd())
+	print()
 	if not Path(".youtube_playlist").is_file():
 		if len(argumentList)<2:
 			print("Please Enter the Youtube Playlist url")
@@ -154,30 +158,53 @@ if __name__=="__main__":
 		else:
 			url=argumentList[1]
 	else:
-		print("A Playlist Already Exist.Getting Data from it")
+		print("-->A Playlist Already Exist.Getting Data from it")
 		with open(".youtube_playlist","r") as fl:
 			for line in fl:
 				file_list_from_youtube.append(line.replace("\n",""))
 
-	print("\n\nDo you want to Enforce file naming i.e All the files will be auto renamed to highest possible match\ny or Y to autorename else any key to manualy rename")
+	print("\n\nDo you want to Enforce file naming (All the files will be auto renamed to highest possible match)\nEnter y or Y to autorename else any key to manualy rename:--->",end=" ")
 	ch= input()
 	if ch.lower()=="y":
 		shouldEnforceRename=True
 	if len(file_list_from_youtube)<=0:
 		print("Downloading the list ....will take some time")
-		stream=os.popen(f"youtube-dl -e --skip-download --flat-playlist {url}")
-		output=stream.read().split("\n")
-		file_list_from_youtube=[x for x in output]
+		#get ydl object 
+		ydl =youtube_dl.YoutubeDL({'extract_flat' : True})
+
+		with ydl:
+			#extract the info
+			result = ydl.extract_info(url,False)
+			# #in the entries of result we have all the required item
+			if result['_type'] !="playlist":
+				print("Given link is not of a Playlist...")
+			else:
+				print("Valid Link of a playlist")
+			#loop through each entry
+			print("Total -video ",len(result['entries']))
+			for video in result['entries']:
+				#add the title to playlist
+				file_list_from_youtube.append(video['title'])
+				
+
+		
+
 		print("Playlist Downloaded...")
+#save downloaded list into the file now ,,,
 		with open(".youtube_playlist","w")as f:
 			for l in file_list_from_youtube:
 				f.write(l)
 				f.write("\n")
-	stream=os.popen("ls")
-	output=stream.read().split("\n")
-	current_file_list=[x for x in output]
-	# print(current_file_list)
-	main(file_list_from_youtube,current_file_list,shouldEnforceRename)
+
+	#will contain current path's filelist 
+	flist = []
+	for p in Path('.').iterdir():
+		if p.is_file():
+			print(p)
+			flist.append(str(p))
+
+
+	main(file_list_from_youtube,flist,shouldEnforceRename)
 	for i in range(5):
 		print(f"Exiting in {5-i} seconds",end="\r")
 		time.sleep(1)

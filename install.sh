@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "0. installing ...youtube-dl (neccessary)"
-sudo apt install youtube-dl
+pip install -r requirements.txt
 sudo chmod 755 youtubeSorter*
 clear
 echo "Installation of Youtube Sorter Starting..."

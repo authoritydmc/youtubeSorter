@@ -40,14 +40,12 @@ def recovery():
                         input("press any key to continue")
                 
         except :
-            print("Error .NO recovery File Exist")
-            rec_file.close()
+            print("Error no recovery File Exist")
             exit()
     if ISRECOVERY_DONE or not ISVALID_FILE:
         if ISRECOVERY_DONE:
             print("Recovery Done")
         print("Removing backup file")
-        # os.system(f"rm {recovery_file_name}") #replace with os.remove module
         os.remove(rec_file.name)
     else:
         print("Failed To do Recovery")
@@ -56,5 +54,8 @@ def recovery():
     rec_file.close()
 
 if __name__=="__main__":
-    print("YoutubeSorter_Recovery v1.01 by authoritydmc")
+    print("-"*80)
+    print("\t\tyoutubeSorter_Recovery v2.0 by authoritydmc")
+    print("-"*80)
+
     recovery()

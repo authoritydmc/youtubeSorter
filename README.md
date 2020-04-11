@@ -1,8 +1,8 @@
-# youtubeSorter v 1.0
-Sort the youtube dl playlist on local downloaded directory..
+# youtubeSorter v 2.0
+Sort the Downloaded youtube playlist files according to youtube.com playlist order..
 # how to Install
 1. **Clone this Repo**
-> git clone https://github.com/authoritydmc/youtube_dl_fileSorter.git
+> git clone https://github.com/authoritydmc/youtubeSorter.git
 2. goto cloned Directory and run install.sh (make sure it is executable) using sudo
 >sudo ./install.sh
 
@@ -39,6 +39,3 @@ Sort the youtube dl playlist on local downloaded directory..
   
   Please note you can run this multiple times untill you get back to the original fileNames.
   
-##### note
-
-Run using python3
