@@ -1,13 +1,15 @@
 #!/bin/bash
-echo "installing ...youtube-dl (neccessary)"
+echo "0. installing ...youtube-dl (neccessary)"
 sudo apt install youtube-dl
 sudo chmod 755 youtubeSorter*
-echo "Removing any Existing youtubeSorter module first"
+clear
+echo "Installation of Youtube Sorter Starting..."
+echo "1.Removing any Existing youtubeSorter module first"
 sudo rm /usr/local/bin/youtubeSorter*
-echo "Installing current Module"
+echo "2.Installing current Module"
 sudo cp youtubeSorter* /usr/local/bin
-echo "installation Done"
+echo "3.Installation Done"
 
-echo "you can now access using youtubeSorter.py from anywhere"
+echo "4.you can now access using youtubeSorter.py from anywhere"
 
 echo "Done ..Setup finished "
