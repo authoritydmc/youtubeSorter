@@ -10,3 +10,4 @@ echo "installation Done"
 
 echo "you can now access using youtubeSorter.py from anywhere"
 
+echo "Done ..Setup finished "
