@@ -6,6 +6,7 @@ import datetime
 import argparse
 import sys
 import time
+import you
 # how to get the playlist
 # youtube-dl -e --skip-download --flat-playlist  https://www.youtube.com/playlist?list=PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN>list.txt
 # some replacement youtube_dl does
