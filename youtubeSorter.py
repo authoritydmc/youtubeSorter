@@ -12,7 +12,7 @@ import time
 # :" -> " -"
 # "/"-> "_"
 # "?"->""
-# 
+# BETA_VERSION
 # INITIALISATION
 RECOVERY_DIRECTORY=".recovery"
 
