@@ -13,7 +13,7 @@ import youtube_dl
 # :" -> " -"
 # "/"-> "_"
 # "?"->""
-#BETA VERSION
+#STABLE VERSION
 # INITIALISATION
 RECOVERY_DIRECTORY=".recovery"
 
