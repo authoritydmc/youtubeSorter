@@ -74,12 +74,14 @@ def main(youtube_file_list,original_file_list,shouldEnforceRename):
 
 
 			
-		else:# for end
+		else:# couldnot find a exact match using in keyword
+		#that's why now we will use SequenceMatcher ratio to Suggest FileName
 			print("-"*50)
 			print("\nCouldn't find a exact match ")
 			ext=original_fileName.split(".")[-1]
 			suggestName=f"%0{sizeFormatter}d "%(_file_count)+fileName+"."+ext
 			print(f"\n\nSuggested Filename:\t\n\t{suggestName} \nFOR (original file)__: \n\t {high_ratio_fileName}")
+			#only if the maximum suggested filename ratio is greater than Threshold than only replace
 			if high_ratio>=RATIO_THREASHOLD:
 				if not shouldEnforceRename:
 					ch=input("press Enter to Accept or N or n to Reject Current Selection ")		
@@ -110,8 +112,7 @@ def main(youtube_file_list,original_file_list,shouldEnforceRename):
 	else:
 		print("no File Renamed hence no backup made ")
 		os.remove(backup_file.name)
-	# print(RATIO_LIST)
-	# print("minimum highest ratio==",min(RATIO_LIST))
+
 
 
 def getbackupfile():
